@@ -5,6 +5,13 @@ equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
 
+x = float(input('введите x: '))
+equation = 'y = -12x + 11111140.2121'.split()
+k = equation[2]
+a=float(k[0:len(k)-1])
+b = float(equation[4])
+y = a*x +b
+print(y)
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
 # Проверить, корректно ли введена дата.
@@ -23,6 +30,30 @@ date = '01.11.1985'
 date = '01.22.1001'
 date = '1.12.1001'
 date = '-2.10.3001'
+
+data = input('введите дату в формате dd.mm.yyyy: ').split('.')
+a=int(data[0])
+b=int(data[1])
+c=int(data[2])
+if len(data[0]) == 2:
+    if len(data[1]) == 2:
+        if len(data[2]) == 4:
+            if a <= 31 and a>0:
+                if b <= 12 and b>0:
+                    if c>=1 and c<=9999:
+                        print('date = ', data[0],'.',data[1],'.',data[2], sep ='')
+                    else:
+                        print('дата введена неправильно')
+                else:
+                    print('дата введена неправильно')
+            else:
+                print('дата введена неправильно')
+        else:
+            print('дата введена неправильно')
+    else:
+        print('дата введена неправильно')
+else:
+    print('дата введена неправильно')
 
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
